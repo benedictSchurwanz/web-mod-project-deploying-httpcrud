@@ -4,7 +4,7 @@ I'm copying the code from my "HTTP / AJAX React Module Project" in order to refa
 
 Below is the Readme copy from the "Deploying Web Apps" project, and below that is the Readme from the "HTTP/CRUD" project. 
 
-# *********************************************************************
+# ********************************
 
 # Module Project: Deploying Web Apps - Portfolio Piece
 
@@ -41,7 +41,7 @@ Work on deploying a second, or even third portfolio project. If you have extra t
 * [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
 
 
-# *********************************************************************
+# ********************************
 
 
 # HTTP / AJAX II React Module Project: Movie CRUD
