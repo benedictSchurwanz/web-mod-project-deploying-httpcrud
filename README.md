@@ -42,7 +42,6 @@ Work on deploying a second, or even third portfolio project. If you have extra t
 
 
 # *********************************************************************
-# *********************************************************************
 
 
 # HTTP / AJAX II React Module Project: Movie CRUD
