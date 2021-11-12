@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import axios from 'axios';
 
 import MovieHeader from './components/MovieHeader';
 import FavoriteMovieList from './components/FavoriteMovieList';
@@ -9,32 +8,23 @@ import Movie from './components/Movie';
 import EditMovieForm from './components/EditMovieForm';
 import AddMovieForm from "./components/AddMovieForm";
 
+import { initialMoviesList } from "./data";
+
 const App = (props) => {
-	const [movies, setMovies] = useState([]);
+	const [movies, setMovies] = useState(initialMoviesList);
 	const [favoriteMovies, setFavoriteMovies] = useState([]);
 
-	useEffect(() => {
-		axios.get('http://localhost:5000/api/movies')
-			.then(res => {
-				setMovies(res.data);
-			})
-			.catch(err => {
-				console.log(err);
-			});
-	}, []);
-
 	const deleteMovie = (idParam) => {
-		const list = movies.filter(movie => movie.id != idParam)
-		setMovies(list)
+		setMovies(movies.filter(movie => movie.id != idParam))
 	}
 
-	const addToFavorites = (movie) => {
-	}
+	// const addToFavorites = (movie) => {
+	// }
 
 	return (
 		<div>
 			<nav className="navbar navbar-dark bg-dark">
-				<span className="navbar-brand" ><img width="40px" alt="" src="./Lambda-Logo-Red.png" /> HTTP / CRUD Module Project</span>
+				<span className="navbar-brand" ><img width="40px" alt="" src="./Lambda-Logo-Red.png" /> HTTP-CRUD-Deployment Project</span>
 			</nav>
 
 			<div className="container">
@@ -52,14 +42,14 @@ const App = (props) => {
 						</Route>
 
 						<Route path="/movies/:id">
-							<Movie deleteMovie={deleteMovie} />
+							<Movie movies={movies} deleteMovie={deleteMovie} />
 						</Route>
 
 						<Route path="/movies">
 							<MovieList movies={movies} />
 						</Route>
 
-						<Route path="/">
+						<Route exact path="/">
 							<Redirect to="/movies" />
 						</Route>
 					</Switch>
