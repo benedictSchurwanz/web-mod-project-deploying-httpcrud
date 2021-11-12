@@ -1,4 +1,4 @@
-const initialData = [
+export const initialMoviesList = [
 	{
 		id: 0,
 		title: "The Godfather",
@@ -49,4 +49,10 @@ const initialData = [
 	}
 ]
 
-export default initialData;
+export const initialMovieState = {
+	title: "",
+	director: "",
+	genre: "",
+	metascore: 0,
+	description: ""
+}
